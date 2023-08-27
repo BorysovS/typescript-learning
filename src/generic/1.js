@@ -10,5 +10,5 @@ function getPromise() {
     });
 }
 getPromise().then(function (data) {
-    console.log(data);
+    console.log(data); // Виведе: ['Text', 50]
 });

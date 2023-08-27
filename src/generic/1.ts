@@ -3,14 +3,14 @@
   Доповніть цю функцію, використовуючи generics, щоб вона повертала правильний тип.
 */
 
-function getPromise(): Array<string | number> {
-  return new Promise((resolve) => {
-    resolve(["Text", 50]);
+function getPromise<T extends (string | number)[]>() {
+  return new Promise<T>((resolve) => {
+    resolve(["Text", 50] as T);
   });
 }
 
 getPromise().then((data) => {
-  console.log(data);
+  console.log(data); // Виведе: ['Text', 50]
 });
 
 export {};
